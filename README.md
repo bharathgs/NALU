@@ -10,3 +10,10 @@ Basic pytorch implementation of NAC/NALU from [Neural Arithmetic Logic Units](ht
 ```python
 pip install NALU
 ```
+
+## Usage
+
+```python
+from nalu.core import NaluCell, NacCell
+from nalu.layers import NaluLayer
+```
