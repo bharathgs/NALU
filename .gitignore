@@ -110,9 +110,9 @@ nohup.out
 #others
 notebooks/*
 LICENSE-MIT
-pyproject.toml
-tox.ini
+#pyproject.toml
+#tox.ini
 tests/*
 .coveragerc
-MANIFEST.in
-setup.py
+#MANIFEST.in
+#setup.py

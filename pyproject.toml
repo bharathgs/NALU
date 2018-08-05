@@ -1,0 +1,17 @@
+[metadata]
+name = 'NALU'
+version = '0.0.1'
+description = ''
+author = 'Bharath G.S'
+author_email = 'royalkingpin@gmail.com'
+license = 'MIT'
+url = 'https://github.com/_/NALU'
+
+[requires]
+python_version = ['3.6']
+
+[build-system]
+requires = ['setuptools', 'wheel']
+
+[tool.hatch.commands]
+prerelease = 'hatch build'
