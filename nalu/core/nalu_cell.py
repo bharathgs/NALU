@@ -1,32 +1,29 @@
-import torch
-
-from math import sqrt
 from torch import Tensor, exp, log, nn
 from torch.nn.parameter import Parameter
 from torch.nn.init import xavier_uniform_
-from torch.nn.functional import tanh, sigmoid, linear
-from NeuralAccumulator import NeuralAccumulator
+from torch.nn.functional import sigmoid, linear
+from .nac_cell import NacCell
 
 
-class NALU(nn.Module):
+class NaluCell(nn.Module):
     """Basic NALU unit implementation 
     from https://arxiv.org/pdf/1808.00508.pdf
     """
 
-    def __init__(self, inputs, outputs):
+    def __init__(self, in_shape, out_shape):
         """
-        inputs: input sample size
-        outputs: output sample size
+        in_shape: input sample dimension
+        out_shape: output sample dimension
         """
         super().__init__()
-        self.inputs = inputs
-        self.outputs = outputs
-        self.G = Parameter(Tensor(outputs, inputs))
-        self.W = Parameter(Tensor(outputs, inputs))
-        self.nac = NeuralAccumulator(outputs, inputs)
+        self.in_shape = in_shape
+        self.out_shape = out_shape
+        self.G = Parameter(Tensor(out_shape, in_shape))
+        self.W = Parameter(Tensor(out_shape, in_shape))
+        self.nac = NacCell(out_shape, in_shape)
+        xavier_uniform_(self.G), xavier_uniform_(self.W)
         self.eps = 1e-5
         self.register_parameter('bias', None)
-        xavier_uniform_(self.G), xavier_uniform_(self.W)
 
     def forward(self, input):
         a = self.nac(input)

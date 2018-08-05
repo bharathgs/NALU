@@ -106,3 +106,13 @@ venv.bak/
 
 #nohup
 nohup.out
+
+#others
+notebooks/*
+LICENSE-MIT
+pyproject.toml
+tox.ini
+tests/*
+.coveragerc
+MANIFEST.in
+setup.py
