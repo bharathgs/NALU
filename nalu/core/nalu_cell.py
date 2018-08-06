@@ -19,9 +19,8 @@ class NaluCell(nn.Module):
         self.in_shape = in_shape
         self.out_shape = out_shape
         self.G = Parameter(Tensor(out_shape, in_shape))
-        self.W = Parameter(Tensor(out_shape, in_shape))
         self.nac = NacCell(out_shape, in_shape)
-        xavier_uniform_(self.G), xavier_uniform_(self.W)
+        xavier_uniform_(self.G)
         self.eps = 1e-5
         self.register_parameter('bias', None)
 
@@ -30,6 +29,6 @@ class NaluCell(nn.Module):
         g = sigmoid(linear(input, self.G, self.bias))
         ag = g * a
         log_in = log(abs(input) + self.eps)
-        m = exp(linear(log_in, self.W, self.bias))
+        m = exp(self.nac(log_in))
         md = (1 - g) * m
         return ag + md
