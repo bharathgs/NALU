@@ -1,11 +1,11 @@
 [metadata]
 name = 'NALU'
 version = '0.0.1'
-description = ''
+description = 'basic implementation of Neural arithmetic and logic units as described in arxiv.org/pdf/1808.00508.pdf'
 author = 'Bharath G.S'
 author_email = 'royalkingpin@gmail.com'
 license = 'MIT'
-url = 'https://github.com/_/NALU'
+url = 'https://github.com/bharathgs/NALU'
 
 [requires]
 python_version = ['3.6']
