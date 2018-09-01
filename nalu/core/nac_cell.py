@@ -19,9 +19,9 @@ class NacCell(nn.Module):
         self.out_shape = out_shape
         self.W_ = Parameter(Tensor(out_shape, in_shape))
         self.M_ = Parameter(Tensor(out_shape, in_shape))
-        self.W = Parameter(tanh(self.W_) * sigmoid(self.M_))
         xavier_uniform_(self.W_), xavier_uniform_(self.M_)
         self.register_parameter('bias', None)
 
-    def forward(self, input):
-        return linear(input, self.W, self.bias)
+    def forward(self, input):        
+        W = tanh(self.W_) * sigmoid(self.M_)
+        return linear(input, W, self.bias)
