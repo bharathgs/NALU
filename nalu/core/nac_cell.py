@@ -1,7 +1,8 @@
 from torch import Tensor, nn
 from torch.nn.parameter import Parameter
 from torch.nn.init import xavier_uniform_
-from torch.nn.functional import tanh, sigmoid, linear
+from torch.nn.functional import linear
+from torch import sigmoid, tanh
 
 
 class NacCell(nn.Module):
