@@ -1,5 +1,12 @@
 # Neural Arithmetic Logic Units (NALU)
 
+[![Downloads](https://pepy.tech/badge/nalu)](https://pepy.tech/project/nalu)
+<img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat">
+<img src="https://img.shields.io/badge/stars-90+-brightgreen.svg?style=flat"/>
+<img src="https://img.shields.io/badge/forks-15+-brightgreen.svg?style=flat"/>
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
 
 ![](resources/NALU.png)
 
